@@ -1,1 +1,6 @@
-2017-08-01 delete user A10\n\n2017-08-03 delete user 555\n\n2017-08-05 delete user AWSDASDSA\n
+
+2017-08-01 delete user A10
+
+2017-08-03 delete user 555
+
+2017-08-05 delete user AWSDASDSA

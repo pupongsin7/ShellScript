@@ -10,9 +10,10 @@ file=""
 while [ "$loop" -le "$en" ]; do
 	echo $st
 
-	file+=$(grep  ${st}.*${word} testlog)"\n"
-
+#	file+=$(grep ${st}.*${word} testlog)
+	echo $(grep ${st}.*${word} testlog) >> dolog.txt
 	loop=$(date -d "$loop + 1 day" +"%Y%m%d")
 	st=$(date -d "$loop" +"%Y-%m-%d")
 done
-echo $file >dolog.txt
+#echo $file >dolog.txt
+
