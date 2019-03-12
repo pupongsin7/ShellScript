@@ -1,4 +1,3 @@
-
 #!/bin/bash
 start=$1
 end=$2
@@ -8,10 +7,14 @@ st=$(date -d "$start" +%Y-%m-%d) || exit -1
 en=$(date -d "$end" +%Y%m%d) || exit -1
 file=""
 while [ "$loop" -le "$en" ]; do
-	echo $st
-
+#	echo $st
 #	file+=$(grep ${st}.*${word} testlog)
-	echo $(grep ${st}.*${word} testlog) >> dolog.txt
+	#check = grep ${st}.*${word}
+	data=$(grep ${st}.*${word} testlog)
+	if [ "$data" != "" ]
+	then
+		echo $(grep ${st}.*${word} testlog) >> ${word}-log.txt
+	fi
 	loop=$(date -d "$loop + 1 day" +"%Y%m%d")
 	st=$(date -d "$loop" +"%Y-%m-%d")
 done
